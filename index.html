@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcus Pub</title>
+  <meta name="description" content="Regenerative systems designer. Founder of Rubania. Building tools that bridge permaculture principles with decentralized coordination.">
+  
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --color-earth: #2c2416;
+      --color-soil: #4a3f2f;
+      --color-sage: #6b7c5e;
+      --color-stone: #a8a090;
+      --color-sand: #e8e2d6;
+      --color-cream: #f5f2eb;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 18px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-cream);
+      color: var(--color-earth);
+      line-height: 1.7;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Subtle texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    header {
+      margin-bottom: 3rem;
+      animation: fadeUp 0.8s ease-out;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      animation: float 6s ease-in-out infinite, fadeUp 0.8s ease-out;
+      filter: drop-shadow(0 8px 24px rgba(107, 124, 94, 0.3));
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.08);
+      filter: drop-shadow(0 12px 32px rgba(107, 124, 94, 0.5));
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      display: block;
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--color-sage);
+    }
+
+    .intro {
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s ease-out 0.1s backwards;
+    }
+
+    .intro p {
+      margin-bottom: 1rem;
+      color: var(--color-soil);
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .lineage {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--color-stone);
+      margin-top: 0.5rem;
+    }
+
+    .lineage::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--color-stone);
+    }
+
+    .work {
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s ease-out 0.2s backwards;
+    }
+
+    .work h2 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-stone);
+      margin-bottom: 1rem;
+    }
+
+    .project {
+      padding: 1.25rem 0;
+      border-top: 1px solid rgba(44, 36, 22, 0.1);
+    }
+
+    .project:last-child {
+      border-bottom: 1px solid rgba(44, 36, 22, 0.1);
+    }
+
+    .project a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .project a:hover {
+      transform: translateX(8px);
+    }
+
+    .project-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-name::after {
+      content: '→';
+      font-size: 1rem;
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: all 0.3s ease;
+    }
+
+    .project a:hover .project-name::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--color-stone);
+    }
+
+    .project.no-link {
+      cursor: default;
+    }
+
+    .soon {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--color-sage);
+      margin-left: 0.6em;
+      font-weight: 400;
+    }
+
+    .connect {
+      animation: fadeUp 0.8s ease-out 0.3s backwards;
+    }
+
+    .connect h2 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-stone);
+      margin-bottom: 1rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .links a {
+      color: var(--color-earth);
+      text-decoration: none;
+      font-size: 0.95rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--color-sage);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .links a:hover {
+      color: var(--color-sage);
+    }
+
+    .links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 4rem;
+      animation: fadeUp 0.8s ease-out 0.4s backwards;
+    }
+
+    .location {
+      font-size: 0.85rem;
+      color: var(--color-stone);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .location svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      html {
+        font-size: 16px;
+      }
+
+      .container {
+        padding: 3rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .logo {
+        width: 110px;
+        height: 110px;
+      }
+
+      .links {
+        gap: 1rem 1.5rem;
+      }
+    }
+
+    /* Bottom banner */
+    .banner {
+      width: 100%;
+      margin-top: 2rem;
+      animation: fadeUp 0.8s ease-out 0.5s backwards;
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-earth: #e8e2d6;
+        --color-soil: #c4bba8;
+        --color-sage: #8fa07a;
+        --color-stone: #7a7468;
+        --color-sand: #3a352c;
+        --color-cream: #1a1814;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <img src="images/cdi-logo.png" alt="CDI Logo" class="logo">
+      </div>
+      <h1><center>Etienne Marcus</center></h1>
+      <span class="tagline">Regenerative People Systems Design</span>
+    </header>
+
+    <section class="intro">
+      <p>
+        Musician at heart, frustrated poet, polymath wannabe, father of two amazing young boys,
+        and an absolute slave to my own insatiable curiosity of finding the ways to
+        make the earth a thriving shelter and fertile organism for all earthlings.
+      </p>
+      <p>
+        I design tools and frameworks for regenerative human settlements —
+        bridging permaculture, rubanisation and DePIN, while leveraging Bitcoin's timechain.
+      </p>
+      <p>
+        Founder of <strong>Chaorder Networks</strong>, a web, fintech, blokchain and systems design oriented consultancy that among other things has helped wiht Bitcoin adoption and self custody management.
+      </p> 
+      <p>
+        Founder of <strong>Rubania</strong>, an open-source platform with the mission to deploy a tissue of millions of regenerative ruban settlements accross the earth to reboot our human potential for good.
+      </p>
+      <div class="lineage">
+        Trained with Bill Mollison & Geoff Lawton
+      </div>
+    </section>
+
+    <section class="work">
+      <h2>Current Work</h2>
+
+      <div class="project">
+        <a href="https://chaorder.com" target="_blank" rel="noopener">
+          <div class="project-name">Chaorder Networks</div>
+          <div class="project-desc">Community finance architecture for a post-industrial world.</div>
+        </a>
+      </div>
+
+      <div class="project">
+        <a href="https://www.bitsultans.it/" target="_blank" rel="noopener">
+          <div class="project-name">BitSultans</div>
+          <div class="project-desc">Scheduled Backups, Cloud Storage and Infrastructure migration services.</div>
+        </a>
+      </div>
+
+      <div class="project">
+        <a href="https://www.rubania.org" target="_blank" rel="noopener">
+          <div class="project-name">Rubania.org</div>
+          <div class="project-desc">Headquarters for a growing repository of tools and resources to fulfil the vision I had back in 2008. The moment I realized that together we can build a better world for everyone, securing a healthy life for our children, while making it worthwile and enjoyable at the same time.</div>
+        </a>
+      </div>
+
+      <div class="project">
+        <a href="https://gaiasapiens.org" target="_blank" rel="noopener">
+          <div class="project-name">Gaia Sapiens</div>
+          <div class="project-desc">A sanctuary for raising awarenes of how bad things really are, and how we could easily build a thriving civilization</div>
+        </a>
+      </div>
+
+      <div class="project no-link">
+        <div class="project-name">Breathing Land <span class="soon">Soon!</span></div>
+        <div class="project-desc">A recurring festival that will facilitate the creation of regenerative settlements</div>
+      </div>
+      
+      <div class="project no-link">
+        <div class="project-name">Ruban Design Studio <span class="soon">Soon!</span></div>
+        <div class="project-desc">Regenerative settlement design & simulation tool</div>
+      </div>
+
+      <div class="project no-link">
+        <div class="project-name">Cell Operating System <span class="soon">Soon!</span></div>
+        <div class="project-desc">An Application for Human Coordination</div>
+      </div>
+    </section>
+
+    <section class="work">
+      <h2>Documents</h2>
+
+      <div class="project">
+        <a href="Docs/SOS_Whitepaper_v1.3.pdf" target="_blank" rel="noopener">
+          <div class="project-name">C.O.S. Whitepaper</div>
+          <div class="project-desc">Socioeconomics for a Civilized World</div>
+        </a>
+      </div>
+
+      <div class="project">
+        <a href="Docs/SOLGAS_Whitepaper_v1.0.pdf" target="_blank" rel="noopener">
+          <div class="project-name">SOLGAS Bioreactor Whitepaper</div>
+          <div class="project-desc">Solar-Augmented Biomass Gasification CHP Generator</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="connect">
+      <h2>Connect</h2>
+      <div class="links">
+        <a href="mailto:etienne@rubania.org">etienne@rubania.org</a>
+        <a href="https://twitter.com/etimarcus" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/etimarcus" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/ermarcus" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="location">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Third rock from the sun
+      </div>
+    </footer>
+  </div>
+
+  <div class="banner">
+    <img src="images/banner.png" alt="Regenerative Settlement Vision">
+  </div>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BitSultans — Infraestructura Blindada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="hd">
+    <div class="hd__inner">
+      <a href="#" class="hd__logo"><img src="logo.png" alt="BitSultans" class="hd__logo-img"></a>
+      <nav class="hd__nav" id="hdNav">
+        <a href="#servicios">Servicios</a>
+        <a href="#metricas">Métricas</a>
+        <a href="#oferta">Oferta</a>
+        <a href="#contacto" class="hd__nav-cta">Agendar demo</a>
+      </nav>
+      <button class="hd__toggle" id="hdToggle" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mob" id="mob">
+    <button class="mob__close" id="mobClose" aria-label="Cerrar">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#metricas">Métricas</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__container">
+      <div class="hero__left">
+        <span class="caption">Backup & Recovery</span>
+        <h1>
+          Tus datos<br>
+          merecen una<br>
+          <i>fortaleza.</i>
+        </h1>
+        <p>Protección empresarial continua con recuperación en minutos. Para equipos de tecnología que exigen cero margen de error.</p>
+        <div class="hero__btns">
+          <a href="#contacto" class="bt bt--dark">Agendar demo gratuita</a>
+          <a href="#servicios" class="bt bt--line">Ver servicios</a>
+        </div>
+      </div>
+      <div class="hero__right">
+        <div class="hero__visual">
+          <div class="hero__ring hero__ring--1"></div>
+          <div class="hero__ring hero__ring--2"></div>
+          <div class="hero__ring hero__ring--3"></div>
+          <div class="hero__center">
+            <span>99.98%</span>
+            <small>uptime</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticker -->
+  <div class="ticker">
+    <div class="ticker__track">
+      <span>Cifrado AES-256</span><span class="ticker__dot"></span>
+      <span>Datacenter Tier 3</span><span class="ticker__dot"></span>
+      <span>GDPR Compliant</span><span class="ticker__dot"></span>
+      <span>Monitoreo 24/7</span><span class="ticker__dot"></span>
+      <span>Recovery &lt;5 min</span><span class="ticker__dot"></span>
+      <span>Redundancia N+1</span><span class="ticker__dot"></span>
+      <span>Cifrado AES-256</span><span class="ticker__dot"></span>
+      <span>Datacenter Tier 3</span><span class="ticker__dot"></span>
+      <span>GDPR Compliant</span><span class="ticker__dot"></span>
+      <span>Monitoreo 24/7</span><span class="ticker__dot"></span>
+      <span>Recovery &lt;5 min</span><span class="ticker__dot"></span>
+      <span>Redundancia N+1</span><span class="ticker__dot"></span>
+    </div>
+  </div>
+
+  <!-- Problema -->
+  <section class="prob">
+    <div class="wrap">
+      <div class="prob__top">
+        <span class="caption">El riesgo</span>
+        <h2>Cada día sin backup<br>es una apuesta que <i>podés perder.</i></h2>
+      </div>
+      <div class="prob__cols">
+        <div class="prob__card" data-r>
+          <span class="prob__n">01</span>
+          <h3>Ransomware</h3>
+          <p>Un ataque encripta todo. Sin respaldo, no hay negociación posible.</p>
+        </div>
+        <div class="prob__card" data-r>
+          <span class="prob__n">02</span>
+          <h3>Parálisis</h3>
+          <p>Cada minuto offline quema presupuesto y credibilidad ante tus clientes.</p>
+        </div>
+        <div class="prob__card" data-r>
+          <span class="prob__n">03</span>
+          <h3>Multas</h3>
+          <p>Las regulaciones no esperan. GDPR castiga con sanciones que pueden hundir empresas.</p>
+        </div>
+        <div class="prob__card" data-r>
+          <span class="prob__n">04</span>
+          <h3>Obsolescencia</h3>
+          <p>Hardware propio: inversión enorme que envejece antes de dar retorno.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="svc" id="servicios">
+    <div class="wrap">
+      <div class="svc__top">
+        <span class="caption">Servicios</span>
+        <h2>Cuatro capas de<br><i>protección absoluta.</i></h2>
+      </div>
+      <div class="svc__grid">
+        <article class="svc__box" data-r>
+          <div class="svc__box-head">
+            <span class="svc__box-n">01</span>
+            <span class="svc__box-tag">Continuo</span>
+          </div>
+          <h3>Backups Automatizados</h3>
+          <p>Copias incrementales diarias con verificación de integridad y cifrado extremo a extremo.</p>
+          <div class="svc__box-line"></div>
+        </article>
+        <article class="svc__box" data-r>
+          <div class="svc__box-head">
+            <span class="svc__box-n">02</span>
+            <span class="svc__box-tag">&lt;5 min</span>
+          </div>
+          <h3>Recuperación Ultra</h3>
+          <p>Restauración completa en minutos. Granular o bare-metal según la emergencia.</p>
+          <div class="svc__box-line"></div>
+        </article>
+        <article class="svc__box" data-r>
+          <div class="svc__box-head">
+            <span class="svc__box-n">03</span>
+            <span class="svc__box-tag">Tier 3</span>
+          </div>
+          <h3>Datacenter Certificado</h3>
+          <p>99.982% uptime. Redundancia N+1. Cumplimiento GDPR. Solo 1.6h de inactividad máxima al año.</p>
+          <div class="svc__box-line"></div>
+        </article>
+        <article class="svc__box" data-r>
+          <div class="svc__box-head">
+            <span class="svc__box-n">04</span>
+            <span class="svc__box-tag">24/7</span>
+          </div>
+          <h3>Monitoreo Permanente</h3>
+          <p>Dashboard real-time. Alertas proactivas. Reportes mensuales. Soporte dedicado siempre disponible.</p>
+          <div class="svc__box-line"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metricas -->
+  <section class="met" id="metricas">
+    <div class="wrap">
+      <span class="caption caption--center">Métricas</span>
+      <div class="met__grid">
+        <div class="met__item" data-r>
+          <div class="met__val">99.982<span>%</span></div>
+          <div class="met__bar"><div class="met__fill" style="--w:99.98%"></div></div>
+          <div class="met__label">Uptime garantizado</div>
+        </div>
+        <div class="met__item" data-r>
+          <div class="met__val">&lt;5<span>min</span></div>
+          <div class="met__bar"><div class="met__fill" style="--w:95%"></div></div>
+          <div class="met__label">Tiempo de recuperación</div>
+        </div>
+        <div class="met__item" data-r>
+          <div class="met__val">24<span>/7</span></div>
+          <div class="met__bar"><div class="met__fill" style="--w:100%"></div></div>
+          <div class="met__label">Monitoreo activo</div>
+        </div>
+        <div class="met__item" data-r>
+          <div class="met__val">1.6<span>h</span></div>
+          <div class="met__bar"><div class="met__fill" style="--w:2%"></div></div>
+          <div class="met__label">Downtime máximo / año</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Oferta -->
+  <section class="deal" id="oferta">
+    <div class="wrap">
+      <div class="deal__split">
+        <div class="deal__left">
+          <span class="caption">Oferta exclusiva</span>
+          <h2>Empezá gratis.<br>Quedate por <i>convicción.</i></h2>
+        </div>
+        <div class="deal__right">
+          <div class="deal__item" data-r>
+            <div class="deal__icon">30d</div>
+            <div>
+              <strong>Prueba gratuita</strong>
+              <p>Sin tarjeta. Sin compromiso. Sin trucos.</p>
+            </div>
+          </div>
+          <div class="deal__item" data-r>
+            <div class="deal__icon">$0</div>
+            <div>
+              <strong>Migración sin costo</strong>
+              <p>Nos encargamos de la transición completa.</p>
+            </div>
+          </div>
+          <div class="deal__item" data-r>
+            <div class="deal__icon">-15%</div>
+            <div>
+              <strong>Descuento anual</strong>
+              <p>Ahorro directo en planes de compromiso.</p>
+            </div>
+          </div>
+          <a href="#contacto" class="bt bt--dark">Solicitar demo &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="cta" id="contacto">
+    <div class="wrap">
+      <div class="cta__split">
+        <div class="cta__left">
+          <span class="caption">Contacto</span>
+          <h2>Tu próximo paso<br>empieza <i>acá.</i></h2>
+          <div class="cta__info">
+            <a href="mailto:info@bitsultans.it">info@bitsultans.it</a>
+            <a href="https://www.bitsultans.it">www.bitsultans.it</a>
+            <a href="https://storage.bitsultans.it">storage.bitsultans.it</a>
+          </div>
+        </div>
+        <form class="cta__form" id="ctaForm">
+          <div class="cta__form-row">
+            <div class="ff">
+              <label>Nombre</label>
+              <input type="text" name="name" required>
+            </div>
+            <div class="ff">
+              <label>Email</label>
+              <input type="email" name="email" required>
+            </div>
+          </div>
+          <div class="ff">
+            <label>Empresa</label>
+            <input type="text" name="company">
+          </div>
+          <div class="ff">
+            <label>Mensaje</label>
+            <textarea name="message" rows="3"></textarea>
+          </div>
+          <button type="submit" class="bt bt--dark bt--full">Enviar mensaje &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="ft">
+    <div class="wrap ft__inner">
+      <a href="#" class="hd__logo"><img src="logo.png" alt="BitSultans" class="hd__logo-img"></a>
+      <span class="ft__copy">&copy; 2026</span>
+      <nav class="ft__nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#metricas">Métricas</a>
+        <a href="#oferta">Oferta</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
