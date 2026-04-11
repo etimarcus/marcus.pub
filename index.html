@@ -13,12 +13,13 @@
   
   <style>
     :root {
-      --color-earth: #2c2416;
-      --color-soil: #4a3f2f;
-      --color-sage: #6b7c5e;
-      --color-stone: #a8a090;
+      --color-earth: #ffffff;
+      --color-soil: #ffffff;
+      --color-sage: #ffffff;
+      --color-stone: #ffffff;
       --color-sand: #e8e2d6;
-      --color-cream: #f5f2eb;
+      --color-cream: #1a1814;
+      --color-title: #d97706;
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'DM Sans', -apple-system, sans-serif;
     }
@@ -110,7 +111,7 @@
       letter-spacing: -0.02em;
       line-height: 1.1;
       margin-bottom: 0.5rem;
-      color: #d97706;
+      color: var(--color-title);
     }
 
     .tagline {
@@ -163,17 +164,17 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.15em;
-      color: var(--color-stone);
+      color: var(--color-title);
       margin-bottom: 1rem;
     }
 
     .project {
       padding: 1.25rem 0;
-      border-top: 1px solid rgba(44, 36, 22, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .project:last-child {
-      border-bottom: 1px solid rgba(44, 36, 22, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .project a {
@@ -195,6 +196,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      color: var(--color-title);
     }
 
     .project-name::after {
@@ -238,7 +240,7 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.15em;
-      color: var(--color-stone);
+      color: var(--color-title);
       margin-bottom: 1rem;
     }
 
@@ -345,17 +347,6 @@
       display: block;
     }
 
-    /* Dark mode support */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --color-earth: #e8e2d6;
-        --color-soil: #c4bba8;
-        --color-sage: #8fa07a;
-        --color-stone: #7a7468;
-        --color-sand: #3a352c;
-        --color-cream: #1a1814;
-      }
-    }
   </style>
 </head>
 <body>
@@ -402,6 +393,13 @@
         <a href="https://www.bitsultans.it/" target="_blank" rel="noopener">
           <div class="project-name">BitSultans</div>
           <div class="project-desc">Scheduled Backups, Cloud Storage and Infrastructure migration services.</div>
+        </a>
+      </div>
+
+      <div class="project">
+        <a href="https://marcus.financial" target="_blank" rel="noopener">
+          <div class="project-name">Marcus.Financial</div>
+          <div class="project-desc">Dashboard for agentic financial operations currently under development.</div>
         </a>
       </div>
 
